@@ -193,3 +193,14 @@ def lookup_tags(artist):
 
 
 print(lookup_tags("Billie Eilish"))
+print(artists.head)
+
+
+print(artists.info())
+
+
+artists[["playcount", "listeners"]] = artists[["playcount", "listeners"]].astype(int)
+artists = artists.sort_values("listeners", ascending=False)
+print(artists.head(10))
+
+artists.to_csv('artists.csv', index=False)
